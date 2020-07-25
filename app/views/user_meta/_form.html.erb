@@ -1,0 +1,32 @@
+<%= form_with(model: user_metum, local: true) do |form| %>
+  <% if user_metum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user_metum.errors.count, "error") %> prohibited this user_metum from being saved:</h2>
+
+      <ul>
+      <% user_metum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :meta_key %>
+    <%= form.text_field :meta_key %>
+  </div>
+
+  <div class="field">
+    <%= form.label :meta_value %>
+    <%= form.text_field :meta_value %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

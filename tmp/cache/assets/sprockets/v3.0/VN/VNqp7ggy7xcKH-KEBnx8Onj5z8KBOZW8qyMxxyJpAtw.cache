@@ -1,0 +1,13 @@
+I"(function() {
+  $(document).on("change", "#check_box", function(e) {
+    return $.ajax({
+      url: "/roles/update",
+      type: "PUT",
+      data: $(this).val(),
+      success: function(data) {},
+      error: function(data) {}
+    });
+  });
+
+}).call(this);
+:ET
